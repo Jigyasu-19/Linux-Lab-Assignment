@@ -1,4 +1,4 @@
-# Linux System Administration Assignment
+# Linux Lab Assignment
 
 ![Ubuntu](https://img.shields.io/badge/Platform-Ubuntu-E95420?style=flat-square&logo=ubuntu)
 ![Linux](https://img.shields.io/badge/OS-Linux-FCC624?style=flat-square&logo=linux)
@@ -267,7 +267,7 @@ The completed assignment demonstrates both conceptual understanding and practica
 
 **Jigyasu Jain**
 
-Linux System Administration Assignment
+Linux Lab Assignment
 
 Ubuntu Linux • Bash Shell • GitHub Repository
 
