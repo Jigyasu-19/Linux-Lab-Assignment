@@ -1,0 +1,218 @@
+===========================================================================
+                  SECURE PROJECT WORKSPACE SETUP REPORT
+===========================================================================
+
+Student Name : Jigyasu Jain
+Course       : Linux System Administration
+Question     : Question 2 – Secure Project Workspace Setup
+Operating System : Ubuntu Linux
+Shell        : Bash
+
+===========================================================================
+
+1. OBJECTIVE
+------------
+
+The objective of this exercise is to create a secure Linux project
+workspace and configure appropriate permissions to protect project files.
+Linux permissions and ownership play a vital role in preventing
+unauthorized access while allowing legitimate users to work efficiently.
+
+This experiment demonstrates directory creation, file creation,
+permission modification, ownership verification, and umask
+configuration.
+
+===========================================================================
+
+2. TASK DESCRIPTION
+-------------------
+
+The following tasks were performed during this experiment:
+
+• Created a dedicated project workspace.
+• Created project directories and files.
+• Verified default permissions.
+• Modified permissions using chmod.
+• Verified ownership details.
+• Examined and modified the system umask.
+• Analyzed how permissions improve data security.
+
+===========================================================================
+
+3. COMMANDS USED
+----------------
+
+1. mkdir -p ~/project_workspace/{docs,src,logs,config}
+2. touch ~/project_workspace/docs/README.md
+3. touch ~/project_workspace/config/settings.conf
+4. touch ~/project_workspace/logs/app.log
+5. ls -la ~/project_workspace
+6. chmod 750 ~/project_workspace/src
+7. chmod 700 ~/project_workspace/config
+8. chmod 640 ~/project_workspace/config/settings.conf
+9. ls -lR ~/project_workspace
+10. chown $USER:$USER ~/project_workspace -R
+11. ls -ld ~/project_workspace
+12. umask
+13. umask 027
+14. umask
+
+===========================================================================
+
+4. DIRECTORY STRUCTURE
+----------------------
+
+project_workspace/
+
+├── config/
+│   └── settings.conf
+│
+├── docs/
+│   └── README.md
+│
+├── logs/
+│   └── app.log
+│
+└── src/
+
+===========================================================================
+
+5. FILE PERMISSIONS
+-------------------
+
+Before Permission Modification
+
+Directories
+drwxrwxr-x
+
+Files
+-rw-rw-r--
+
+After Permission Modification
+
+config/
+drwx------
+
+src/
+drwxr-x---
+
+settings.conf
+-rw-r-----
+
+===========================================================================
+
+6. OWNERSHIP DETAILS
+--------------------
+
+Owner
+-----
+Jigyasu
+
+Group
+-----
+Jigyasu
+
+Ownership verification confirmed that all files and directories belong to
+the current user and associated group.
+
+===========================================================================
+
+7. UMASK ANALYSIS
+-----------------
+
+Default Umask
+
+0002
+
+Modified Umask
+
+0027
+
+The updated umask removes write permission for the group and all
+permissions for others when new files are created, improving the overall
+security of the workspace.
+
+===========================================================================
+
+8. OBSERVATIONS
+---------------
+
+• The mkdir command successfully created a structured project workspace.
+
+• The touch command initialized empty configuration and documentation
+  files.
+
+• Default permissions allowed group write access before modification.
+
+• chmod restricted access to sensitive directories and configuration
+  files.
+
+• Ownership remained assigned to the logged-in user after verification.
+
+• The umask value was successfully updated to enforce stricter default
+  permissions for future files.
+
+===========================================================================
+
+9. SECURITY ANALYSIS
+--------------------
+
+Linux permissions follow the principle of least privilege. Restricting
+access to sensitive directories prevents accidental modification by
+unauthorized users.
+
+Configuration files often contain application settings and credentials.
+Granting access only to the owner minimizes the risk of unauthorized
+changes.
+
+The use of umask ensures that newly created files inherit secure default
+permissions without requiring manual changes each time.
+
+===========================================================================
+
+10. FINDINGS
+------------
+
+The secure workspace was successfully created.
+
+Permissions were modified correctly.
+
+Ownership was verified.
+
+The updated umask provides stronger default protection for future files.
+
+The workspace is suitable for storing confidential project data.
+
+===========================================================================
+
+11. KNOWLEDGE GAINED
+--------------------
+
+During this experiment, the following Linux concepts were reinforced:
+
+• Directory creation using mkdir.
+• File creation using touch.
+• Permission modification using chmod.
+• Ownership verification using chown.
+• Understanding symbolic permission notation.
+• Understanding octal permission notation.
+• Working with umask.
+• Applying Linux security best practices.
+
+===========================================================================
+
+12. CONCLUSION
+--------------
+
+The secure workspace was successfully configured using Linux permission
+management techniques. The experiment demonstrated how ownership,
+permissions, and umask work together to protect files from unauthorized
+access while maintaining usability for legitimate users.
+
+These concepts are fundamental for Linux system administrators responsible
+for managing secure multi-user environments.
+
+===========================================================================
+
+END OF REPORT
+===========================================================================

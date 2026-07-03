@@ -1,0 +1,274 @@
+===========================================================================
+                 STORAGE HEALTH ASSESSMENT REPORT
+===========================================================================
+
+Student Name : Jigyasu Jain
+Course       : Linux System Administration
+Question     : Question 5 – Storage Health Assessment and Documentation
+Operating System : Ubuntu Linux
+Shell        : Bash
+
+===========================================================================
+
+1. OBJECTIVE
+------------
+
+The objective of this experiment is to assess the storage resources
+available on a Linux system and document the findings using the vi editor.
+
+Storage management is a critical responsibility of Linux system
+administrators. Regular monitoring of storage devices, mounted file
+systems, disk utilization, and inode usage helps prevent storage-related
+issues that can affect application performance and system stability.
+
+This experiment demonstrates how Linux utilities can be used to analyze
+storage resources and maintain proper documentation.
+
+===========================================================================
+
+2. TASK DESCRIPTION
+-------------------
+
+The following activities were performed during this assessment:
+
+• Identified all available storage devices.
+• Examined mounted file systems.
+• Analyzed overall disk usage.
+• Investigated inode utilization.
+• Created a storage assessment report using the vi editor.
+• Evaluated storage health.
+• Suggested recommendations for improving storage utilization.
+
+===========================================================================
+
+3. COMMANDS USED
+----------------
+
+1. lsblk -o NAME,SIZE,TYPE,FSTYPE,MOUNTPOINT
+2. df -hT
+3. df -i
+4. df -h --total
+5. vi Storage_Assessment_Report.txt
+
+===========================================================================
+
+4. STORAGE DEVICES
+------------------
+
+The lsblk command displayed all available block storage devices connected
+to the Linux system.
+
+The information included:
+
+• Device Name
+• Device Size
+• Device Type
+• Filesystem Type
+• Mount Point
+
+This information provides a clear overview of the storage architecture.
+
+===========================================================================
+
+5. MOUNTED FILE SYSTEMS
+-----------------------
+
+The df -hT command displayed all mounted file systems.
+
+Important information observed:
+
+• Filesystem Name
+• Filesystem Type
+• Total Capacity
+• Used Space
+• Available Space
+• Percentage Utilization
+• Mount Location
+
+Mounted file systems are essential because they define where users and
+applications access storage resources.
+
+===========================================================================
+
+6. DISK USAGE ANALYSIS
+----------------------
+
+Overall disk utilization was examined using:
+
+df -h
+df -h --total
+
+The observations indicated that:
+
+• Total storage utilization remained well below maximum capacity.
+
+• Adequate free storage was available for future application deployment.
+
+• No storage partition showed critically high utilization.
+
+Maintaining free storage space helps prevent performance degradation and
+ensures stable application operation.
+
+===========================================================================
+
+7. INODE UTILIZATION
+--------------------
+
+The df -i command displayed inode statistics.
+
+Observed information included:
+
+• Total Inodes
+• Used Inodes
+• Free Inodes
+• Inode Utilization Percentage
+
+The inode utilization remained low, indicating that the filesystem can
+still accommodate a large number of additional files.
+
+Monitoring inode usage is important because a filesystem can become full
+even when disk space is still available.
+
+===========================================================================
+
+8. STORAGE HEALTH OBSERVATIONS
+------------------------------
+
+The storage assessment produced the following observations:
+
+• Storage devices were detected correctly.
+
+• Mounted filesystems were functioning normally.
+
+• Disk utilization was within safe operating limits.
+
+• Inode usage remained very low.
+
+• No abnormal storage conditions were observed.
+
+• The system is suitable for deploying additional applications.
+
+===========================================================================
+
+9. TECHNICAL ANALYSIS
+---------------------
+
+Linux represents storage devices as block devices.
+
+The lsblk utility provides information about physical and virtual storage
+devices.
+
+The df utility reports filesystem usage by reading filesystem metadata
+rather than scanning every file.
+
+Inodes store metadata about files, including ownership, permissions,
+timestamps, and pointers to file data.
+
+Because every file requires one inode, monitoring inode usage is just as
+important as monitoring available disk space.
+
+===========================================================================
+
+10. RECOMMENDATIONS
+-------------------
+
+To improve long-term storage health, the following best practices are
+recommended:
+
+• Enable SMART monitoring for physical drives.
+
+• Schedule regular filesystem consistency checks.
+
+• Configure automatic log rotation.
+
+• Remove temporary and unused files periodically.
+
+• Monitor inode utilization regularly.
+
+• Maintain at least 20% free disk space.
+
+• Create scheduled backups before major system updates.
+
+===========================================================================
+
+11. REAL-WORLD APPLICATIONS
+---------------------------
+
+Storage monitoring is an essential task in:
+
+• Linux Production Servers
+
+• Cloud Infrastructure
+
+• Database Servers
+
+• Virtual Machines
+
+• Container Platforms
+
+• Backup Servers
+
+• Enterprise Storage Systems
+
+• DevOps Environments
+
+===========================================================================
+
+12. FINDINGS
+------------
+
+The storage assessment confirmed that the Linux system has healthy
+storage utilization.
+
+Disk usage remained within acceptable limits, inode availability was
+sufficient, and mounted file systems were functioning correctly.
+
+No immediate maintenance actions were required.
+
+===========================================================================
+
+13. KNOWLEDGE GAINED
+--------------------
+
+This experiment improved understanding of:
+
+• Block Storage Devices
+
+• Mounted File Systems
+
+• Disk Utilization
+
+• Filesystem Types
+
+• Inodes
+
+• Storage Monitoring
+
+• Capacity Planning
+
+• Linux vi Editor
+
+• System Documentation
+
+===========================================================================
+
+14. CONCLUSION
+--------------
+
+The Linux storage assessment was completed successfully using standard
+administrative utilities.
+
+The collected information provided a comprehensive overview of storage
+resources, filesystem utilization, and inode statistics.
+
+The system demonstrated healthy storage conditions and is well prepared
+for future application deployment.
+
+Regular storage monitoring combined with preventive maintenance ensures
+reliable system performance and minimizes the risk of storage-related
+failures.
+
+===========================================================================
+
+END OF REPORT
+===========================================================================

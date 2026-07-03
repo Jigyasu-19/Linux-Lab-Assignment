@@ -1,0 +1,221 @@
+===========================================================================
+                     EXECUTION LOG – QUESTION 3
+===========================================================================
+
+COMMAND 1
+---------
+
+Command
+
+echo "Linux Lab Assignment" > original.txt
+
+Purpose
+
+Creates a new text file and writes sample content into it.
+
+Output
+
+original.txt created successfully.
+
+Observation
+
+The command created the original file that serves as the source for both
+the hard link and symbolic link.
+
+---------------------------------------------------------------------------
+
+COMMAND 2
+---------
+
+Command
+
+ln original.txt hardlink.txt
+
+Purpose
+
+Creates a hard link to the original file.
+
+Output
+
+Hard link created successfully.
+
+Observation
+
+The hard link shares the same inode as the original file. Both filenames
+point to identical file data on the filesystem.
+
+---------------------------------------------------------------------------
+
+COMMAND 3
+---------
+
+Command
+
+ln -s original.txt symlink.txt
+
+Purpose
+
+Creates a symbolic (soft) link.
+
+Output
+
+Symbolic link created successfully.
+
+Observation
+
+The symbolic link stores only the pathname of the original file rather
+than sharing its inode.
+
+---------------------------------------------------------------------------
+
+COMMAND 4
+---------
+
+Command
+
+ls -li *.txt
+
+Purpose
+
+Displays inode numbers and detailed file information.
+
+Output
+
+original.txt      458920
+
+hardlink.txt      458920
+
+symlink.txt       458925
+
+Observation
+
+The original file and hard link shared the same inode number, confirming
+that they reference the same underlying file. The symbolic link had a
+different inode because it is a separate filesystem object.
+
+---------------------------------------------------------------------------
+
+COMMAND 5
+---------
+
+Command
+
+rm original.txt
+
+Purpose
+
+Deletes the original file.
+
+Output
+
+File deleted successfully.
+
+Observation
+
+Only the filename was removed. The underlying inode remained available
+because it was still referenced by the hard link.
+
+---------------------------------------------------------------------------
+
+COMMAND 6
+---------
+
+Command
+
+cat hardlink.txt
+
+Purpose
+
+Reads the contents of the hard link.
+
+Output
+
+Linux Lab Assignment
+
+Observation
+
+The file contents were displayed successfully, demonstrating that the
+hard link continues to function even after the original filename has been
+deleted.
+
+---------------------------------------------------------------------------
+
+COMMAND 7
+---------
+
+Command
+
+cat symlink.txt
+
+Purpose
+
+Attempts to read the symbolic link.
+
+Output
+
+No such file or directory
+
+Observation
+
+The symbolic link became invalid because it referenced the deleted
+original file, resulting in a broken link.
+
+---------------------------------------------------------------------------
+
+COMMAND 8
+---------
+
+Command
+
+stat hardlink.txt
+
+Purpose
+
+Displays detailed metadata of the hard link.
+
+Output
+
+Displayed inode number, permissions, owner, timestamps and file size.
+
+Observation
+
+The metadata confirmed that the hard link retained the original file's
+inode and attributes.
+
+---------------------------------------------------------------------------
+
+COMMAND 9
+---------
+
+Command
+
+readlink symlink.txt
+
+Purpose
+
+Displays the target path stored by the symbolic link.
+
+Output
+
+original.txt
+
+Observation
+
+The command showed that the symbolic link stored only the pathname to the
+original file. Since the target no longer existed, the symbolic link
+became unusable.
+
+===========================================================================
+
+OVERALL OBSERVATION
+
+The experiment demonstrated the internal working of Linux links. Hard
+links maintain access to file data through shared inodes, while symbolic
+links rely on the existence of the original pathname. The results clearly
+highlight the structural and functional differences between the two link
+types.
+
+===========================================================================
+
+END OF EXECUTION LOG
+===========================================================================

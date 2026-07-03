@@ -1,0 +1,226 @@
+===========================================================================
+                    FILE SYSTEM AND LINK ANALYSIS REPORT
+===========================================================================
+
+Student Name : Jigyasu Jain
+Course       : Linux System Administration
+Question     : Question 3 – File System and Link Analysis
+Operating System : Ubuntu Linux
+Shell        : Bash
+
+===========================================================================
+
+1. OBJECTIVE
+------------
+
+The objective of this experiment is to understand how Linux manages files
+through inodes and links. Linux supports two major types of links:
+Hard Links and Symbolic (Soft) Links.
+
+This experiment demonstrates how both types of links are created,
+how they reference files, how inode numbers differ, and what happens
+when the original file is deleted.
+
+Understanding links is essential because they are widely used in Linux
+system administration for backups, software installation, shared files,
+and filesystem management.
+
+===========================================================================
+
+2. TASK DESCRIPTION
+-------------------
+
+The following tasks were performed:
+
+• Created an original text file.
+• Added sample content to the file.
+• Created a Hard Link.
+• Created a Symbolic Link.
+• Compared inode numbers.
+• Deleted the original file.
+• Tested both links after deletion.
+• Examined file metadata.
+
+===========================================================================
+
+3. COMMANDS USED
+----------------
+
+1. echo "Linux Lab Assignment" > original.txt
+2. ln original.txt hardlink.txt
+3. ln -s original.txt symlink.txt
+4. ls -li *.txt
+5. rm original.txt
+6. cat hardlink.txt
+7. cat symlink.txt
+8. stat hardlink.txt
+9. readlink symlink.txt
+
+===========================================================================
+
+4. INODE ANALYSIS
+-----------------
+
+Original File
+
+Filename : original.txt
+
+Hard Link
+
+Filename : hardlink.txt
+
+Symbolic Link
+
+Filename : symlink.txt
+
+Observation
+
+• The original file and the hard link shared the same inode number.
+
+• The symbolic link had a different inode because it stores only the path
+  to the original file rather than sharing the file's inode.
+
+===========================================================================
+
+5. HARD LINK VS SYMBOLIC LINK
+-----------------------------
+
+Feature                     Hard Link          Symbolic Link
+
+Shares Inode                Yes                No
+
+Different Inode             No                 Yes
+
+Works After Original
+File is Deleted             Yes                No
+
+Can Link Directories        No                 Yes (with permissions)
+
+Can Cross File Systems      No                 Yes
+
+Stores Actual Data          Yes                No
+
+Stores File Path            No                 Yes
+
+===========================================================================
+
+6. EFFECT OF DELETING THE ORIGINAL FILE
+---------------------------------------
+
+Original File
+
+Deleted Successfully
+
+Hard Link
+
+Continued to function normally because it references the same inode.
+
+Symbolic Link
+
+Became a broken link because it only stores the pathname of the
+original file.
+
+===========================================================================
+
+7. METADATA ANALYSIS
+--------------------
+
+The stat command displayed important metadata including:
+
+• Inode Number
+• File Size
+• Access Permissions
+• Owner
+• Group
+• Last Access Time
+• Modification Time
+• Change Time
+
+The metadata confirmed that the hard link shared identical file
+information with the original file.
+
+===========================================================================
+
+8. OBSERVATIONS
+---------------
+
+• Linux stores file information inside inodes rather than filenames.
+
+• Multiple filenames can point to the same inode using hard links.
+
+• Symbolic links simply reference the location of another file.
+
+• Deleting the original file removes only one filename, not the inode.
+
+• Hard links remain functional until every link referencing the inode is
+  removed.
+
+===========================================================================
+
+9. REAL-WORLD APPLICATIONS
+--------------------------
+
+Hard Links
+
+• Backup systems
+• File recovery
+• Efficient storage
+• Package management
+
+Symbolic Links
+
+• Application shortcuts
+• Shared libraries
+• Configuration files
+• Version management
+• Mounted storage locations
+
+===========================================================================
+
+10. FINDINGS
+------------
+
+The experiment clearly demonstrated the difference between hard links
+and symbolic links.
+
+Hard links provide redundancy by sharing the same inode, whereas symbolic
+links act as references to another file path.
+
+Deleting the original file affects only symbolic links.
+
+===========================================================================
+
+11. KNOWLEDGE GAINED
+--------------------
+
+This experiment strengthened understanding of:
+
+• Linux Inodes
+• File Metadata
+• Hard Links
+• Symbolic Links
+• Linux File System Architecture
+• File Deletion Process
+• File Recovery Concepts
+
+===========================================================================
+
+12. CONCLUSION
+--------------
+
+Linux links provide flexible methods for referencing files.
+
+Hard links offer reliable access even after the original filename is
+removed because they reference the same inode.
+
+Symbolic links provide greater flexibility by referencing file paths,
+but become invalid if the original file is deleted.
+
+Understanding the behavior of both types of links is essential for Linux
+system administrators responsible for managing files, backups, and
+software installations.
+
+===========================================================================
+
+END OF REPORT
+===========================================================================

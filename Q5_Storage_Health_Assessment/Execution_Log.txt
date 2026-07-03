@@ -1,0 +1,135 @@
+===========================================================================
+                     EXECUTION LOG – QUESTION 5
+===========================================================================
+
+COMMAND 1
+---------
+
+Command
+
+lsblk -o NAME,SIZE,TYPE,FSTYPE,MOUNTPOINT
+
+Purpose
+
+Displays all block storage devices connected to the system.
+
+Output
+
+The command listed available disks, partitions, filesystem types, and
+mount points.
+
+Observation
+
+The output provided a complete overview of the storage architecture,
+allowing identification of all available storage devices and their
+associated mount locations.
+
+---------------------------------------------------------------------------
+
+COMMAND 2
+---------
+
+Command
+
+df -hT
+
+Purpose
+
+Displays mounted file systems with filesystem type and human-readable
+disk usage statistics.
+
+Output
+
+Displayed filesystem names, total capacity, used space, available space,
+usage percentage, and mount points.
+
+Observation
+
+The mounted filesystems were functioning correctly. Disk utilization
+remained well below critical levels, indicating sufficient storage
+capacity for current workloads.
+
+---------------------------------------------------------------------------
+
+COMMAND 3
+---------
+
+Command
+
+df -i
+
+Purpose
+
+Displays inode utilization for each mounted filesystem.
+
+Output
+
+Displayed total, used, and available inodes together with utilization
+percentages.
+
+Observation
+
+The filesystem had a large number of free inodes available. This confirms
+that additional files can be created without encountering inode
+exhaustion.
+
+---------------------------------------------------------------------------
+
+COMMAND 4
+---------
+
+Command
+
+df -h --total
+
+Purpose
+
+Displays the combined disk usage across all mounted filesystems.
+
+Output
+
+Displayed total storage capacity, used space, available space, and
+overall utilization percentage.
+
+Observation
+
+The combined storage utilization remained within healthy operating
+limits, demonstrating efficient storage management across the system.
+
+---------------------------------------------------------------------------
+
+COMMAND 5
+---------
+
+Command
+
+vi Storage_Assessment_Report.txt
+
+Purpose
+
+Creates and edits the storage assessment report using the vi text editor.
+
+Output
+
+Report created and saved successfully.
+
+Observation
+
+The vi editor was used to document the storage assessment. It provides a
+lightweight and powerful text-editing environment commonly used by Linux
+system administrators.
+
+===========================================================================
+
+OVERALL OBSERVATION
+
+The storage assessment successfully evaluated the Linux storage
+environment. Storage devices, mounted filesystems, disk utilization, and
+inode usage were examined and documented. The results indicate that the
+system is operating with healthy storage utilization and sufficient
+capacity for future growth.
+
+===========================================================================
+
+END OF EXECUTION LOG
+===========================================================================

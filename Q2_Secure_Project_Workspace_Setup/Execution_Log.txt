@@ -1,0 +1,329 @@
+===========================================================================
+                     EXECUTION LOG – QUESTION 2
+===========================================================================
+
+COMMAND 1
+---------
+
+Command
+
+mkdir -p ~/project_workspace/{docs,src,logs,config}
+
+Purpose
+
+Creates the main project workspace along with multiple subdirectories in a
+single command.
+
+Output
+
+Directories created successfully.
+
+Observation
+
+The mkdir command generated the required project structure. Using the -p
+option ensured that parent directories were created automatically if they
+did not already exist.
+
+---------------------------------------------------------------------------
+
+COMMAND 2
+---------
+
+Command
+
+touch ~/project_workspace/docs/README.md
+
+Purpose
+
+Creates an empty documentation file.
+
+Output
+
+README.md created successfully.
+
+Observation
+
+The touch command created an empty file without modifying existing files.
+It is commonly used to initialize project documentation.
+
+---------------------------------------------------------------------------
+
+COMMAND 3
+---------
+
+Command
+
+touch ~/project_workspace/config/settings.conf
+
+Purpose
+
+Creates a configuration file.
+
+Output
+
+settings.conf created successfully.
+
+Observation
+
+Configuration files are commonly used to store application settings.
+Creating this file prepares the workspace for future configuration data.
+
+---------------------------------------------------------------------------
+
+COMMAND 4
+---------
+
+Command
+
+touch ~/project_workspace/logs/app.log
+
+Purpose
+
+Creates an application log file.
+
+Output
+
+app.log created successfully.
+
+Observation
+
+Log files store application events and error messages. This file can later
+be used for debugging and monitoring purposes.
+
+---------------------------------------------------------------------------
+
+COMMAND 5
+---------
+
+Command
+
+ls -la ~/project_workspace
+
+Purpose
+
+Displays all files and directories with permissions and ownership.
+
+Output
+
+config/
+docs/
+logs/
+src/
+
+Observation
+
+The directory structure was verified successfully. The output also showed
+default Linux permissions assigned during creation.
+
+---------------------------------------------------------------------------
+
+COMMAND 6
+---------
+
+Command
+
+chmod 750 ~/project_workspace/src
+
+Purpose
+
+Restricts directory access by modifying permissions.
+
+Output
+
+Permissions updated successfully.
+
+Observation
+
+The owner has full access, the group has read and execute permissions, and
+other users have no access. This provides better security for source code.
+
+---------------------------------------------------------------------------
+
+COMMAND 7
+---------
+
+Command
+
+chmod 700 ~/project_workspace/config
+
+Purpose
+
+Restricts access to configuration files.
+
+Output
+
+Permissions updated.
+
+Observation
+
+Only the owner can access the configuration directory. This protects
+sensitive application settings from unauthorized users.
+
+---------------------------------------------------------------------------
+
+COMMAND 8
+---------
+
+Command
+
+chmod 640 ~/project_workspace/config/settings.conf
+
+Purpose
+
+Protects the configuration file.
+
+Output
+
+Permissions changed successfully.
+
+Observation
+
+The owner has read and write permissions, the group has read-only access,
+and others have no permissions. This follows recommended security
+practices.
+
+---------------------------------------------------------------------------
+
+COMMAND 9
+---------
+
+Command
+
+ls -lR ~/project_workspace
+
+Purpose
+
+Recursively lists all files and directories.
+
+Output
+
+Displayed updated permissions.
+
+Observation
+
+The recursive listing confirmed that all permission modifications were
+applied successfully.
+
+---------------------------------------------------------------------------
+
+COMMAND 10
+----------
+
+Command
+
+chown $USER:$USER ~/project_workspace -R
+
+Purpose
+
+Assigns ownership of all project files to the current user.
+
+Output
+
+Ownership updated successfully.
+
+Observation
+
+Correct ownership ensures that the project can be managed without
+permission conflicts in a multi-user environment.
+
+---------------------------------------------------------------------------
+
+COMMAND 11
+----------
+
+Command
+
+ls -ld ~/project_workspace
+
+Purpose
+
+Displays ownership and permissions of the main workspace directory.
+
+Output
+
+Owner: Jigyasu
+Group: Jigyasu
+
+Observation
+
+Ownership verification confirmed that the workspace belongs to the
+currently logged-in user.
+
+---------------------------------------------------------------------------
+
+COMMAND 12
+----------
+
+Command
+
+umask
+
+Purpose
+
+Displays the current default permission mask.
+
+Output
+
+0002
+
+Observation
+
+The default umask allowed group write permissions for newly created files.
+
+---------------------------------------------------------------------------
+
+COMMAND 13
+----------
+
+Command
+
+umask 027
+
+Purpose
+
+Changes the default permission mask.
+
+Output
+
+No output (successful execution).
+
+Observation
+
+Future files will automatically receive more restrictive permissions,
+improving security without requiring manual chmod commands.
+
+---------------------------------------------------------------------------
+
+COMMAND 14
+----------
+
+Command
+
+umask
+
+Purpose
+
+Verifies the updated umask value.
+
+Output
+
+0027
+
+Observation
+
+The new umask value was successfully applied, confirming that default
+permissions for future files will be more secure.
+
+===========================================================================
+
+OVERALL OBSERVATION
+
+The project workspace was successfully created and secured using Linux
+directory management, file permissions, ownership configuration, and
+umask settings. The implemented changes demonstrate how Linux enforces
+access control and protects sensitive project data.
+
+===========================================================================
+
+END OF EXECUTION LOG
+===========================================================================

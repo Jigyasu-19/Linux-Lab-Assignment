@@ -1,0 +1,236 @@
+===========================================================================
+                     EXECUTION LOG – QUESTION 4
+===========================================================================
+
+COMMAND 1
+---------
+
+Command
+
+ls -la /proc/$$/fd
+
+Purpose
+
+Displays all currently open file descriptors for the active shell process.
+
+Output
+
+Descriptors 0, 1, 2, and 255 were displayed.
+
+Observation
+
+The command confirmed that Linux automatically assigns standard input,
+standard output, and standard error descriptors to every process. The
+additional descriptor is used internally by the shell.
+
+---------------------------------------------------------------------------
+
+COMMAND 2
+---------
+
+Command
+
+exec 3> /tmp/mylog.txt
+
+Purpose
+
+Creates a new file descriptor (FD 3) and redirects it to a log file.
+
+Output
+
+Command executed successfully.
+
+Observation
+
+File descriptor 3 was opened and associated with the specified log file.
+The shell can now write data directly through this descriptor.
+
+---------------------------------------------------------------------------
+
+COMMAND 3
+---------
+
+Command
+
+echo "Logging through FD 3" >&3
+
+Purpose
+
+Writes text to the custom file descriptor.
+
+Output
+
+No terminal output.
+
+Observation
+
+The message was written to the log file instead of appearing on the
+terminal because output was redirected through FD 3.
+
+---------------------------------------------------------------------------
+
+COMMAND 4
+---------
+
+Command
+
+exec 3>&-
+
+Purpose
+
+Closes the custom file descriptor.
+
+Output
+
+Command executed successfully.
+
+Observation
+
+Closing unused descriptors is a good practice because it releases system
+resources and prevents accidental writes.
+
+---------------------------------------------------------------------------
+
+COMMAND 5
+---------
+
+Command
+
+cat /tmp/mylog.txt
+
+Purpose
+
+Displays the contents of the log file.
+
+Output
+
+Logging through FD 3
+
+Observation
+
+The successful output confirmed that data had been redirected correctly
+through the custom file descriptor.
+
+---------------------------------------------------------------------------
+
+COMMAND 6
+---------
+
+Command
+
+ls /nonexistent 2> errors.txt
+
+Purpose
+
+Redirects error messages to a file.
+
+Output
+
+No error displayed on terminal.
+
+Observation
+
+Instead of printing the error on the screen, Linux redirected the stderr
+stream to the file errors.txt.
+
+---------------------------------------------------------------------------
+
+COMMAND 7
+---------
+
+Command
+
+cat errors.txt
+
+Purpose
+
+Displays the redirected error message.
+
+Output
+
+ls: cannot access '/nonexistent': No such file or directory
+
+Observation
+
+The contents confirmed that only the error stream was redirected while
+standard output remained unaffected.
+
+---------------------------------------------------------------------------
+
+COMMAND 8
+---------
+
+Command
+
+ulimit -n
+
+Purpose
+
+Displays the maximum number of open file descriptors allowed.
+
+Output
+
+1024
+
+Observation
+
+The default limit is suitable for normal users but may be insufficient
+for high-load server applications.
+
+---------------------------------------------------------------------------
+
+COMMAND 9
+---------
+
+Command
+
+ulimit -n 4096
+
+Purpose
+
+Increases the maximum number of open file descriptors.
+
+Output
+
+Command executed successfully.
+
+Observation
+
+The shell accepted the new limit, allowing more files to remain open
+simultaneously.
+
+---------------------------------------------------------------------------
+
+COMMAND 10
+----------
+
+Command
+
+ulimit -n
+
+Purpose
+
+Verifies the updated resource limit.
+
+Output
+
+4096
+
+Observation
+
+The increased limit was confirmed, demonstrating that Linux allows
+resource limits to be modified within permitted ranges.
+
+===========================================================================
+
+OVERALL OBSERVATION
+
+The experiment successfully demonstrated Linux file descriptor
+management, output redirection, error handling, and resource limit
+configuration. These mechanisms are fundamental for developing scalable
+applications and administering production Linux systems.
+
+===========================================================================
+
+END OF EXECUTION LOG
+===========================================================================

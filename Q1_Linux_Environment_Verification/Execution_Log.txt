@@ -1,0 +1,139 @@
+===========================================================================
+                     EXECUTION LOG – QUESTION 1
+===========================================================================
+
+COMMAND 1
+---------
+
+Command
+
+id
+
+Purpose
+
+Displays the User ID (UID), Group ID (GID), and all groups associated
+with the currently logged-in user.
+
+Output
+
+uid=1001(Jigyasu)
+gid=1001(Jigyasu)
+groups=1001(Jigyasu)
+
+Observation
+
+The command successfully identified the logged-in user along with the
+primary group membership. This confirms that the user account is active
+and properly configured on the system.
+
+---------------------------------------------------------------------------
+
+COMMAND 2
+---------
+
+Command
+
+echo $SHELL
+
+Purpose
+
+Displays the default shell currently being used by the logged-in user.
+
+Output
+
+/bin/bash
+
+Observation
+
+The output shows that Bash is the default shell. Bash provides command
+execution, scripting capabilities, and environment variable management
+for Linux systems.
+
+---------------------------------------------------------------------------
+
+COMMAND 3
+---------
+
+Command
+
+pwd
+
+Purpose
+
+Displays the absolute path of the current working directory.
+
+Output
+
+/home/Jigyasu
+
+Observation
+
+The current directory is the user's home directory. This is the default
+location where user-specific files and folders are stored.
+
+---------------------------------------------------------------------------
+
+COMMAND 4
+---------
+
+Command
+
+ls -la
+
+Purpose
+
+Lists all files and directories, including hidden files, along with
+permissions, ownership, and timestamps.
+
+Output
+
+.bashrc
+.profile
+.bash_logout
+...
+
+Observation
+
+The command displayed both regular and hidden files. Hidden files begin
+with a period (.) and are commonly used for storing user configuration
+settings. File permissions and ownership information were also displayed.
+
+---------------------------------------------------------------------------
+
+COMMAND 5
+---------
+
+Command
+
+ping -c 4 google.com
+
+Purpose
+
+Tests network connectivity by sending four ICMP packets to Google's
+servers.
+
+Output
+
+4 packets transmitted
+4 packets received
+0% packet loss
+
+Observation
+
+The successful responses indicate that the system has an active internet
+connection. Zero packet loss suggests reliable communication with the
+remote host.
+
+===========================================================================
+
+OVERALL OBSERVATION
+
+The Linux environment verification completed successfully. All commands
+executed without errors, confirming that the user account, shell,
+directory structure, and network connectivity are functioning correctly.
+
+===========================================================================
+
+END OF EXECUTION LOG
+
+===========================================================================

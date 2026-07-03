@@ -1,0 +1,125 @@
+===========================================================================
+                    LINUX ENVIRONMENT VERIFICATION REPORT
+===========================================================================
+
+Student Name : Jigyasu Jain
+Course       : Linux System Administration
+Question     : Question 1 – Linux Environment Verification
+Operating System : Ubuntu Linux
+Shell        : Bash
+
+===========================================================================
+
+1. OBJECTIVE
+------------
+
+The objective of this exercise is to verify the Linux working environment
+before performing administrative tasks. This includes identifying the
+currently logged-in user, examining user group information, verifying the
+default shell, checking the current working directory, listing available
+files and directories, and confirming network connectivity.
+
+System verification is an important first step for every Linux
+administrator because it ensures that the environment is configured
+correctly before accessing or modifying system resources.
+
+===========================================================================
+
+2. TASK DESCRIPTION
+-------------------
+
+The following system information was verified:
+
+• Logged-in user information
+• User ID and Group ID
+• Login shell
+• Current working directory
+• Available files and directories
+• Internet connectivity
+
+===========================================================================
+
+3. COMMANDS USED
+----------------
+
+1. id
+2. echo $SHELL
+3. pwd
+4. ls -la
+5. ping -c 4 google.com
+
+===========================================================================
+
+4. ENVIRONMENT DETAILS
+----------------------
+
+Logged-in User
+--------------
+Jigyasu
+
+User ID
+-------
+1001
+
+Primary Group
+-------------
+Jigyasu
+
+Default Shell
+-------------
+/bin/bash
+
+Working Directory
+-----------------
+/home/Jigyasu
+
+===========================================================================
+
+5. OBSERVATIONS
+---------------
+
+• The system successfully identified the current user and associated
+  group information.
+
+• The default login shell is Bash, which is the standard command-line
+  interpreter used by Ubuntu.
+
+• The current working directory is the user's home directory where all
+  personal files are stored.
+
+• Hidden configuration files such as .bashrc and .profile were visible
+  using the ls -la command.
+
+• Network connectivity was verified successfully with zero packet loss,
+  confirming that the system has access to external networks.
+
+===========================================================================
+
+6. FINDINGS
+-----------
+
+The Linux environment is correctly configured for the current user.
+
+User information, shell configuration, and working directory were
+successfully verified.
+
+Internet connectivity is functioning normally.
+
+The system is ready for performing Linux administrative tasks.
+
+===========================================================================
+
+7. CONCLUSION
+-------------
+
+The environment verification process confirmed that the Ubuntu system is
+operating normally. User authentication, shell configuration, directory
+structure, and network communication were all functioning correctly.
+
+These checks provide confidence that subsequent administrative tasks can
+be performed without environmental issues.
+
+===========================================================================
+
+END OF REPORT
+===========================================================================
