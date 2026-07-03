@@ -13,7 +13,7 @@
 
 **Student Name:** Jigyasu Jain
 
-**Repository:** Linux-System-Admin-Assignment
+**Repository:** Linux-Lab-Assignment
 
 **Operating System:** Ubuntu Linux
 
